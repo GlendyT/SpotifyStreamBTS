@@ -111,3 +111,11 @@
 
 }
 
+.filtro {
+    font-weight: 800;
+    padding: 0.5rem;
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--primary);
+
+}

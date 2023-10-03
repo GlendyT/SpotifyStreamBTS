@@ -7,7 +7,6 @@ export default function Canciones({canciones}) {
 
   const tracks1 = []
 
-
   tracks.map( (song, idx ) => {
 
     let tempObj = { songName: "", songPlayCount: 0, songImgUrl: ""}
@@ -18,6 +17,8 @@ export default function Canciones({canciones}) {
     tracks1.push(tempObj)
     
   })
+
+
 
   return (
    <div className="caja" 
