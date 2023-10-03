@@ -24,7 +24,7 @@ export default function Canciones({canciones}) {
    <div className="caja" 
         /*style={{ background:`url(${tracks[0].image_url})`, 
         backgroundRepeat:"no-repeat", backgroundSize:"cover"}}*/ >
-    <Link  to={`https://open.spotify.com/album/${albumId}`}> 
+    <Link  to={`https://open.spotify.com/album/${albumId}`} target="_blank" > 
     <img className="imagen" src={tracks[0].image_url} alt={`Imagen album ${album}` }/>
     </Link>
       <div > 
