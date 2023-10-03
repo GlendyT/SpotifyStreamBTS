@@ -7,7 +7,7 @@ export default function Artista({artista}) {
 
   return (
     <div className="artista">
-      <Link to={uri}> 
+      <Link to={uri} target="_blank"> 
       <img className="imagen" src={image} alt={`Imagen del Artista $(name)`}/>
       </Link>
       <div>
