@@ -25,7 +25,7 @@ export default function Solos({solo}) {
 
   return (
    <div className="caja">
-    <Link to={`https://open.spotify.com/album/${albumId}`}>
+    <Link to={`https://open.spotify.com/album/${albumId}`} target="_blank" >
     <img className="imagen" src={tracks[0].image_url} alt={`Imagen album ${album}` }/>
     </Link>
       <div>
