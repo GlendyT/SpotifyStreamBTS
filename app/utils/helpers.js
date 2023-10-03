@@ -5,3 +5,5 @@ export const formatearCantidad = (cantidad ) => {
       style : "decimal",
     })
   }
+
+
