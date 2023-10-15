@@ -117,5 +117,18 @@
     font-size: 2.5rem;
     margin: 0;
     color: var(--primary);
-
+}
+.lista{
+    gap: 0;
+    font-size:1.5rem;
+    cursor:grab;
+    padding: 0;
+    color: var(--primary);
+    align-items: center;
+	opacity: none;
+    margin-left:1rem;
+}
+.lista:hover {
+    box-shadow: 10px 10px 14px 2px rgba(239, 164, 244, 0.47);
+    background-color:rgba(239, 164, 244, 0.47) ;
 }

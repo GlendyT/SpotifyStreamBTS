@@ -1,5 +1,10 @@
 import { Link } from "@remix-run/react"
 import { formatearCantidad} from "~/utils/helpers"
+import { 
+  FormControl, 
+  InputLabel, 
+  Select
+ } from "@mui/material"
 
 export default function Canciones({canciones}) {
 
@@ -9,16 +14,15 @@ export default function Canciones({canciones}) {
 
   tracks.map( (song, idx ) => {
 
-    let tempObj = { songName: "", songPlayCount: 0, songImgUrl: ""}
+    let tempObj = { songName: "", songAlbum:"", songPlayCount: 0, songImgUrl: ""}
     tempObj.songName = song.name,
+    tempObj.songAlbum = song.album,
     tempObj.songPlayCount = song.playcount,
     tempObj.songImgUrl = song?.image_url || ""
 
     tracks1.push(tempObj)
     
   })
-
-
 
   return (
    <div className="caja" 
@@ -46,5 +50,6 @@ export default function Canciones({canciones}) {
       <p className="stream">Total Reproducciones:{formatearCantidad(totalStreams)}  </p>
     </div>
    </div>
+
   )
 }

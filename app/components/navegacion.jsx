@@ -17,8 +17,8 @@ export default function Navegacion() {
             <Link
                 to="/discografia"
                 className={location.pathname === "/discografia" ? "active" : " "}
-            >Albums BTS</Link>
-             <Link
+            >Albums de BTS</Link>
+                    <Link
                 to="/solitarios"
                 className={location.pathname === "/solitarios" ? "active" : " "}
             >Albums Solitrios </Link>
@@ -27,7 +27,7 @@ export default function Navegacion() {
                 className={location.pathname === "/albumsingles" ? "active" : " "}
             >Singles Albums </Link>
      </nav>
-
-
   )
 }
+
+
