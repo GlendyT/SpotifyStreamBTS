@@ -31,7 +31,7 @@ export function links() {
 
 export default function Index() {
 
-  const [mostrarComponente, setMostrarComponente] = useState(true);
+  const [mostrarComponente, setMostrarComponente] = useState(false);
 
   return (
     <main className="contenedor artistas">
