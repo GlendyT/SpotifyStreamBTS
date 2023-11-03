@@ -1,8 +1,7 @@
 import { useLoaderData } from "@remix-run/react"
-import { getMusica } from "~/models/musica.server"
+import { getMusica, getAlbumsingles } from "~/models/musica.server"
 import Canciones from "~/components/canciones"
 import styles from "../styles/canciones.css"
-import { Formulario } from "../components/formulario"
 
 
 export function links() {
@@ -25,9 +24,6 @@ export default function Discografia() {
   return (
     <main className="contenedor">
       <h2 className="heading">Albumes de BTS</h2>
-
-      <Formulario/>
-
       {musica?.length && (
         <div className="musica-grid">
           {musica.map( canciones =>(

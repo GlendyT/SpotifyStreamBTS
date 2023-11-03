@@ -15,19 +15,9 @@ export default function Navegacion() {
                 className={location.pathname === "/artistas" ? "active" : " "}
             > Artistas</Link>
             <Link
-                to="/discografia"
-                className={location.pathname === "/discografia" ? "active" : " "}
-            >Albums de BTS</Link>
-                    <Link
-                to="/solitarios"
-                className={location.pathname === "/solitarios" ? "active" : " "}
-            >Albums Solitrios </Link>
-            <Link
-                to="/albumsingles"
-                className={location.pathname === "/albumsingles" ? "active" : " "}
-            >Singles Albums </Link>
+                to="/todo"
+                className={location.pathname === "/todo" ? "active" : " "}
+            >BTS ON SPOTIFY </Link>
      </nav>
   )
 }
-
-
