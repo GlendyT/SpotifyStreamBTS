@@ -1,5 +1,5 @@
 import { useLoaderData } from "@remix-run/react"
-import { getMusica } from "~/models/musica.server"
+import { getSolitarios } from "~/models/musica.server"
 import Solo from "~/components/solo"
 import styles from "../styles/canciones.css"
 
@@ -13,12 +13,12 @@ export function links() {
 }
 
 export async function loader() {
-  const musica = await getMusica()
-  return musica.solos
+  const musi = await getSolitarios()
+  return musi.solos
 }
 
 export default function Solitarios() {
-  const musica = useLoaderData()
+  const musi = useLoaderData()
 
   return (
     <main className="contenedor">
@@ -26,7 +26,7 @@ export default function Solitarios() {
        
       {musica?.length && (
         <div className="musica-grid">
-          {musica.map( solo =>(
+          {musi.map( solo =>(
             <Solo
              key={solo?.album}
              solo={solo}

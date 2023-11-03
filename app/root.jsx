@@ -10,6 +10,8 @@ import Header from "~/components/header"
 import Footer from "~/components/footer"
 
 
+
+
 export function meta() {
     return [ 
     (
@@ -52,9 +54,11 @@ export function links() {
 
 export default function App() {
 
+
   return (
     <Document>
-        <Outlet/>
+        <Outlet
+        />
     </Document>
   )
 }
@@ -67,7 +71,7 @@ function Document({children}) {
                 <Links/>        
             </head>
             <body>
-                <Header/>
+            <Header/>      
               {children}
               <Footer/>
               <Scripts/>

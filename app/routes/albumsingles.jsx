@@ -1,5 +1,5 @@
 import { useLoaderData } from "@remix-run/react"
-import { getMusica } from "~/models/musica.server"
+import { getAlbumsingles } from "~/models/musica.server"
 import Unicosingles from "../components/unicosingles"
 import styles from "../styles/canciones.css"
 
@@ -13,20 +13,20 @@ export function links() {
 }
 
 export async function loader() {
-  const musica = await getMusica()
-  return musica.singles
+  const music = await getAlbumsingles()
+  return music.singles
 }
 
 export default function Albumsingles() {
-  const musica = useLoaderData()
+  const music = useLoaderData()
 
   return (
     <main className="contenedor">
       <h2 className="heading">Album Unico</h2>
        
-      {musica?.length && (
+      {music?.length && (
         <div className="musica-grid">
-          {musica.map( unicosingles =>(
+          {music.map( unicosingles =>(
             <Unicosingles
              key={unicosingles?.albumId}
              unicosingles={unicosingles}
