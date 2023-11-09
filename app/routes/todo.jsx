@@ -59,7 +59,18 @@ export default function todo() {
         </div>
       )}
 
-     {music?.length && (
+      {musi?.length && (
+        <div className="musica-grid">
+          {musi.map( solo =>(
+            <Solo
+             key={solo?.album}
+             solo={solo}
+            />
+          ))}
+        </div>
+      )}
+
+      {music?.length && (
         <div className="musica-grid">
           {music.map( unicosingles =>(
             <Unicosingles
@@ -72,16 +83,6 @@ export default function todo() {
         </div>
       )} 
 
-      {musi?.length && (
-        <div className="musica-grid">
-          {musi.map( solo =>(
-            <Solo
-             key={solo?.album}
-             solo={solo}
-            />
-          ))}
-        </div>
-      )}
 
      </main>
     </>

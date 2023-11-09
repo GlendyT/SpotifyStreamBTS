@@ -9,13 +9,13 @@ export default function Canciones({canciones}) {
 
   tracks.map( (song, idx ) => {
 
-    let tempObj = { songName: "", songPlayCount: 0, songImgUrl: ""}
+    let tempObj = { songName: "", songPlayCount: 0, songImgUrl: "", songGainInStreams: 0}
     tempObj.songName = song.name,
     tempObj.songPlayCount = song.playcount,
+    tempObj.songGainInStreams = song.gainInStreams,
     tempObj.songImgUrl = song?.image_url || ""
 
     tracks1.push(tempObj)
-    
   })
 
   return (
@@ -34,7 +34,13 @@ export default function Canciones({canciones}) {
             <>
               <div className="gird-cols-6"> 
                 <p className="listado"> {song.songName}</p>
-                <p className="conteo" >{formatearCantidad(song.songPlayCount)} </p>
+                <p className="conteo" >
+                {formatearCantidad(song.songPlayCount)}
+                 <p className="conteoind"> 
+                 + {formatearCantidad(song.songGainInStreams)}
+                 </p>
+                </p>
+                
               </div>
             </>
           )

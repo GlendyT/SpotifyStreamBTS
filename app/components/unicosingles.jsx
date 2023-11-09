@@ -24,7 +24,11 @@ export default function Unicosingles({unicosingles}) {
       <p className="titulo">Canción</p>
       <div className="gird-cols-6"> 
         <p className="listado"> {tracks[0].name}</p>
-        <p className="conteo">Total: {formatearCantidad(tracks[0].playcount)} </p>
+        <p className="conteo">Total: {formatearCantidad(tracks[0].playcount)} 
+          <p className="conteoind"> 
+            + {formatearCantidad(gainInStreams)}
+          </p>
+        </p>
      </div>
     <p className="stream">Streams diarios: {formatearCantidad(gainInStreams)} </p>
   </div>
