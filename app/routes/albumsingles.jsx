@@ -1,7 +1,7 @@
 import { useLoaderData } from "@remix-run/react"
 import { getAlbumsingles } from "~/models/musica.server"
-import Unicosingles from "../components/unicosingles"
 import styles from "../styles/canciones.css"
+import ListadoUnicosingles from "../components/listado-unicosingles"
 
 export function links() {
   return [
@@ -23,17 +23,9 @@ export default function Albumsingles() {
   return (
     <main className="contenedor">
       <h2 className="heading">Album Unico</h2>
-       
-      {music?.length && (
-        <div className="musica-grid">
-          {music.map( unicosingles =>(
-            <Unicosingles
-             key={unicosingles?.albumId}
-             unicosingles={unicosingles}
-            />
-          ))}
-        </div>
-      )}
+      <ListadoUnicosingles
+       music={music}
+      />
     </main>
   )
 }

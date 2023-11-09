@@ -1,9 +1,10 @@
 import {getMusica, getAlbumsingles, getSolitarios} from "../models/musica.server"
 import { useLoaderData } from "@remix-run/react"
-import Canciones from "../components/canciones"
-import Unicosingles from "../components/unicosingles"
-import Solo from "../components/solo"
+import ListadoCanciones from "../components/listado-canciones"
+import ListadoUnicosingles from "../components/listado-unicosingles"
+import ListadoSolo from "../components/listado-solo"
 import styles from "../styles/canciones.css"
+
 
 export function meta() {
   return [ 
@@ -48,41 +49,18 @@ export default function todo() {
     <>
      <main className="contenedor">
      <h2 className="heading">Albumes de BTS</h2>
-     {musica?.length && (
-        <div className="musica-grid">
-          {musica.map( canciones =>(
-            <Canciones 
-             key={canciones?.album}
-             canciones={canciones}
-            />
-          ))}
-        </div>
-      )}
 
-      {musi?.length && (
-        <div className="musica-grid">
-          {musi.map( solo =>(
-            <Solo
-             key={solo?.album}
-             solo={solo}
-            />
-          ))}
-        </div>
-      )}
+     <ListadoCanciones
+      musica={musica}
+     />
 
-      {music?.length && (
-        <div className="musica-grid">
-          {music.map( unicosingles =>(
-            <Unicosingles
-             key={unicosingles?.albumId}
-             unicosingles={unicosingles}
-            />
-          ))}
+     <ListadoSolo 
+      musi={musi}
+     />
 
-          
-        </div>
-      )} 
-
+     <ListadoUnicosingles
+      music={music}
+     />
 
      </main>
     </>

@@ -41,7 +41,7 @@ export default function Solos({solo}) {
             <>
               <div className="gird-cols-6"> 
                 <p className="listado"> {song.songName}</p>
-                <p className="conteo" >+{formatearCantidad(song.songPlayCount)}
+                <p className="conteo" >{formatearCantidad(song.songPlayCount)}
                  <p className="conteoind"> 
                  + {formatearCantidad(song.songGainInStreams)}
                  </p>
