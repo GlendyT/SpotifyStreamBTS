@@ -46,8 +46,8 @@ export default function Canciones({canciones}) {
           )
         })
       }
-      <p className="stream">Streams diario: {formatearCantidad(gainInStreams)} </p>
-      <p className="stream">Total Reproducciones:{formatearCantidad(totalStreams)}  </p>
+      <p className="stream">Streams diario: +{formatearCantidad(gainInStreams)} </p>
+      <p className="stream">Total Reproducciones: +{formatearCantidad(totalStreams)}  </p>
     </div>
    </div>
 

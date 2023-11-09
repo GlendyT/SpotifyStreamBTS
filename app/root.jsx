@@ -71,7 +71,7 @@ function Document({children}) {
                 <Links/>        
             </head>
             <body>
-            <Header/>      
+            <Header/>  
               {children}
               <Footer/>
               <Scripts/>
