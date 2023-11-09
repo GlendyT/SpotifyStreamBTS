@@ -1,7 +1,7 @@
 import { useLoaderData } from "@remix-run/react"
 import { getSolitarios } from "~/models/musica.server"
-import Solo from "~/components/solo"
 import styles from "../styles/canciones.css"
+import ListadoSolo from "../components/listado-solo"
 
 export function links() {
   return [
@@ -23,17 +23,9 @@ export default function Solitarios() {
   return (
     <main className="contenedor">
       <h2 className="heading">Albumes Solitarios</h2>
-       
-      {musica?.length && (
-        <div className="musica-grid">
-          {musi.map( solo =>(
-            <Solo
-             key={solo?.album}
-             solo={solo}
-            />
-          ))}
-        </div>
-      )}
+       <ListadoSolo
+        musi={musi}
+       />
     </main>
   )
 }
