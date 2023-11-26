@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import imagen from "../../public/img/BTS.jpg"
-import styles from "~/styles/artistas.css"
+import styles from "~/styles/canciones.css"
 
 
 export function meta() {

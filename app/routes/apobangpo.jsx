@@ -1,8 +1,10 @@
 import {getMusica, getAlbumsingles, getSolitarios} from "../models/musica.server"
+import {getArtistas} from "../models/artistas.server"
 import { useLoaderData } from "@remix-run/react"
 import ListadoCanciones from "../components/listado-canciones"
 import ListadoUnicosingles from "../components/listado-unicosingles"
 import ListadoSolo from "../components/listado-solo"
+import ListadoArtistas from "../components/listado-artistas"
 import styles from "../styles/canciones.css"
 
 
@@ -10,7 +12,7 @@ export function meta() {
   return [ 
   (
       {
-          title:"BTS - Musica",
+          title:"BTS - Toda su Musica",
           description: "Musica BTS"
       }
   )
@@ -28,30 +30,36 @@ export function links() {
 
 export async function loader () {
  
-  const [musica, music, musi] = await Promise.all([
+  const [musica, music, musi, artistas] = await Promise.all([
     getMusica(),
     getAlbumsingles(),
-    getSolitarios()
+    getSolitarios(),
+    getArtistas()
   ])
 
   return {
     musica: musica.albums,
     music: music.singles,
-    musi:musi.solos
+    musi:musi.solos,
+    artistas: artistas.results
+    
   }
 }
-export default function todo() {
+export default function Apobangpo() {
 
-  const {musica, music, musi} = useLoaderData()
+  const {musica, music, musi, artistas} = useLoaderData()
 
 
   return (
     <>
      <main className="contenedor">
-     <h2 className="heading">Albumes de BTS</h2>
+     <ListadoArtistas
+      artistas={artistas}
+     />
 
+     <h2 className="heading">Albumes de BTS</h2>
      <ListadoCanciones
-      musica={musica}
+    musica={musica}
      />
 
      <ListadoSolo 

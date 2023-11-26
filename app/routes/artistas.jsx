@@ -1,7 +1,7 @@
 import { useLoaderData } from "@remix-run/react"
 import { getArtistas } from "~/models/artistas.server"
-import Artista from "~/components/artista"
-import styles from "~/styles/artistas.css"
+import ListadoArtistas from "~/components/listado-artistas"
+import styles from "~/styles/canciones.css"
 
 export function meta() {
     return [ 
@@ -29,24 +29,19 @@ export async function loader() {
 } 
 
 export default function Artistas() {
-
   const artistas = useLoaderData()
+
   return (
     <main className="contenedor">
       <h2 className="heading"> MIEMBROS DE BTS </h2>
       
-      {artistas?.length && (
-        <div className="artistas-grid">
 
-          {artistas.map( artista => (
-           <Artista
-            key={artista?.name}
-            artista={artista}
+        <div className="artistas-grid">
+           <ListadoArtistas
+            artistas={artistas}
            />
-          ))}
-          
         </div>
-      )}
+
     </main>
   )
 }

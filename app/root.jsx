@@ -12,6 +12,7 @@ import Footer from "~/components/footer"
 
 
 
+
 export function meta() {
     return [ 
     (
@@ -71,7 +72,7 @@ function Document({children}) {
                 <Links/>        
             </head>
             <body>
-            <Header/>  
+            <Header/> 
               {children}
               <Footer/>
               <Scripts/>

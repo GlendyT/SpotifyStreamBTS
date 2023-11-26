@@ -3,16 +3,16 @@ import { formatearCantidad} from "~/utils/helpers"
 
 export default function Canciones({canciones}) {
 
-  const {album, totalStreams, playcount, tracks, gainInStreams, albumId} = canciones
-
+  const {album, totalStreams, tracks, gainInStreams, albumId} = canciones
   const tracks1 = []
 
   tracks.map( (song, idx ) => {
 
-    let tempObj = { songName: "", songPlayCount: 0, songImgUrl: "", songGainInStreams: 0}
+    let tempObj = { songName: "", songPlayCount: 0, songImgUrl: "", songGainInStreams: 0,songArtist:""}
     tempObj.songName = song.name,
     tempObj.songPlayCount = song.playcount,
     tempObj.songGainInStreams = song.gainInStreams,
+    tempObj.songArtist = song.artist,
     tempObj.songImgUrl = song?.image_url || ""
 
     tracks1.push(tempObj)
@@ -25,13 +25,15 @@ export default function Canciones({canciones}) {
     <Link  to={`https://open.spotify.com/album/${albumId}`} target="_blank" > 
     <img className="imagen" src={tracks[0].image_url} alt={`Imagen album ${album}` }/>
     </Link>
-      <div > 
+    
+      <div>
           <h3 className="titulo" >Album: {album}</h3>
           <p className="titulo">Canciones</p>
+
       {
-        tracks1.map( (song) => {
+        tracks1.map( (song) => {      
           return(
-            <>
+            <>         
               <div className="gird-cols-6"> 
                 <p className="listado"> {song.songName}</p>
                 <p className="conteo" >
