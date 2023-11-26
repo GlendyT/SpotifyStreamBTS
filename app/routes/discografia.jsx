@@ -1,7 +1,7 @@
 import { useLoaderData } from "@remix-run/react"
-import { getMusica, getAlbumsingles } from "~/models/musica.server"
-import styles from "../styles/canciones.css"
+import { getMusica } from "~/models/musica.server"
 import ListadoCanciones from "../components/listado-canciones"
+import styles from "../styles/canciones.css"
 
 
 export function links() {

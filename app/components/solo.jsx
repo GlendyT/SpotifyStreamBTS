@@ -1,5 +1,4 @@
 import { Link } from "@remix-run/react"
-import { lazy } from "react"
 import { formatearCantidad} from "~/utils/helpers"
 
 export default function Solos({solo}) {
@@ -15,7 +14,7 @@ export default function Solos({solo}) {
 
   tracks.map((song, idx) => {
 
-    let tempObj = {songName: "", songPlayCount: 0, songImgUrl: "", songGainInStreams: 0, songArtist:" "}
+    let tempObj = {songName: "", songPlayCount: 0, songImgUrl: "", songGainInStreams: 0, songArtist:""}
     tempObj.songName = song.name,
     tempObj.songPlayCount = song.playcount,
     tempObj.songGainInStreams = song.gainInStreams,
@@ -24,7 +23,8 @@ export default function Solos({solo}) {
 
     tracks1.push(tempObj)
   })
-  
+
+
   return (
    <div className="caja">
     <Link to={`https://open.spotify.com/album/${albumId}`} target="_blank" >

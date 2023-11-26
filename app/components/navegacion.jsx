@@ -11,12 +11,8 @@ export default function Navegacion() {
                 className={location.pathname === "/" ? "active" : " "}
             > BTS </Link>
             <Link
-                to="/artistas"
-                className={location.pathname === "/artistas" ? "active" : " "}
-            > Artistas</Link>
-            <Link
-                to="/todo"
-                className={location.pathname === "/todo" ? "active" : " "}
+                to="/apobangpo"
+                className={location.pathname === "/apobangpo" ? "active" : " "}
             >BTS ON SPOTIFY </Link>
      </nav>
   )
