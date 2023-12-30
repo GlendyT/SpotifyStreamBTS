@@ -3,7 +3,7 @@ import { formatearCantidad} from "~/utils/helpers"
 
 export default function Canciones({canciones}) {
 
-  const {album, totalStreams, tracks, gainInStreams, albumId} = canciones
+  const {album, tracks, albumId, gainInStreams, totalStreams} = canciones
   const tracks1 = []
 
   tracks.map( (song, idx ) => {
@@ -27,13 +27,12 @@ export default function Canciones({canciones}) {
     </Link>
     
       <div>
-          <h3 className="titulo" >Album: {album}</h3>
-          <p className="titulo">Canciones</p>
-
+          <div className="titulo" >Album: {album}</div>    
       {
         tracks1.map( (song) => {      
           return(
-            <>         
+            
+            <> 
               <div className="gird-cols-6"> 
                 <p className="listado"> {song.songName}</p>
                 <p className="conteo" >
@@ -42,14 +41,14 @@ export default function Canciones({canciones}) {
                  + {formatearCantidad(song.songGainInStreams)}
                  </p>
                 </p>
-                
               </div>
             </>
           )
         })
       }
-      <p className="stream">Streams diario: +{formatearCantidad(gainInStreams)} </p>
-      <p className="stream">Total Reproducciones: +{formatearCantidad(totalStreams)}  </p>
+    
+    <p className="stream">Streams diario: +{formatearCantidad(gainInStreams)} </p>    
+    <p className="stream">Total Reproducciones: +{formatearCantidad(totalStreams)}  </p> 
     </div>
    </div>
 

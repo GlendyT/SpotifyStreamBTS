@@ -1,15 +1,15 @@
 import { Link } from "@remix-run/react"
 import { formatearCantidad} from "~/utils/helpers"
 
-export default function Solos({solo}) {
+ function Solo({solo}) {
 
-  const { album, 
+const { album, 
         totalStreams, 
         gainInStreams,
-        playcount, 
         tracks, 
-        albumId } = solo
-  
+        albumId} = solo
+
+//Traer todas las canciones 
   const tracks1 = []
 
   tracks.map((song, idx) => {
@@ -32,9 +32,7 @@ export default function Solos({solo}) {
     </Link>
       <div>
         <h3 className="titulo" >Album: {album}</h3>
-        <p className="titulo">Canción</p>
-        <div className="gird-cols-6"> 
-       </div> 
+       <div> 
         {
         tracks1.map( (song) => {
           return(
@@ -51,9 +49,15 @@ export default function Solos({solo}) {
           )
         })
       }
-    <p className="stream">Streams diario: +{formatearCantidad(gainInStreams)} </p>
-    <p className="stream">Total Reproducciones:+{formatearCantidad(totalStreams)}  </p>
+      </div>
+   <p className="stream">Streams diario: +{formatearCantidad(gainInStreams)} </p>
+   <p className="stream">Total Reproducciones:+{formatearCantidad(totalStreams)}  </p>
    </div> 
   </div> 
   )
 }
+export default Solo;
+
+
+
+    

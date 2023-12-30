@@ -5,7 +5,8 @@ function ListadoArtistas({artistas}) {
     <> 
     {artistas?.length && (
         <div className="artista">
-          {artistas.map( artist =>(
+          {
+           artistas.map( artist =>(
             <Artist
              key={artist?.results}
              artist={artist}

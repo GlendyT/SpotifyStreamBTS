@@ -1,7 +1,9 @@
 import { Link } from "@remix-run/react"
 
-export default function Artist({artist}) {
+function Artist({artist}) {
   const {image, name, uri} = artist
+
+
 
 
   return (
@@ -17,4 +19,5 @@ export default function Artist({artist}) {
     </div>
   )
 }
-  
+
+export default Artist;

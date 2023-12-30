@@ -5,7 +5,8 @@ export default function ListadoUnicosingles({music}) {
     <>
     {music?.length && (
         <div className="musica-grid">
-          {music.map( unicosingles =>(
+          {
+           music.map( unicosingles =>(
             <Unicosingles
              key={unicosingles?.albumId}
              unicosingles={unicosingles}

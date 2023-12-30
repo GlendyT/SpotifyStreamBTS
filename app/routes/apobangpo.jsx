@@ -8,12 +8,13 @@ import ListadoArtistas from "../components/listado-artistas"
 import styles from "../styles/canciones.css"
 
 
+
 export function meta() {
   return [ 
   (
       {
-          title:"BTS - Toda su Musica",
-          description: "Musica BTS"
+          title:"BTS - Música",
+          description: "Música BTS"
       }
   )
 ]
@@ -53,11 +54,13 @@ export default function Apobangpo() {
   return (
     <>
      <main className="contenedor">
+
      <ListadoArtistas
       artistas={artistas}
-     />
+     /> 
 
-     <h2 className="heading">Albumes de BTS</h2>
+     <div className="heading">Albumes de BTS</div>
+
      <ListadoCanciones
     musica={musica}
      />

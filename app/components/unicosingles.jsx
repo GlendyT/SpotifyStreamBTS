@@ -4,9 +4,7 @@ import { formatearCantidad} from "~/utils/helpers"
 export default function Unicosingles({unicosingles}) {
 
   const { album, 
-          totalStreams, 
-          gainInStreams, 
-          playcount, 
+          gainInStreams,  
           tracks, 
           albumId} = unicosingles
   const img = tracks[0].image_url
@@ -21,7 +19,6 @@ export default function Unicosingles({unicosingles}) {
    </Link>
     <div>
       <h3 className="titulo" >Album: {album}</h3>
-      <p className="titulo">Canción</p>
       <div className="gird-cols-6"> 
         <p className="listado"> {tracks[0].name}</p>
         <p className="conteo">Total: 

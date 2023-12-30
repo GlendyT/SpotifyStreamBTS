@@ -5,7 +5,8 @@ export default function ListadoCanciones({musica}) {
     <> 
     {musica?.length && (
         <div className="musica-grid">
-          {musica.map( canciones =>(
+          {
+           musica.map( canciones =>(
             <Canciones 
              key={canciones?.album}
              canciones={canciones}
